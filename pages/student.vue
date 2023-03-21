@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ title }}
     <student-list :classList="classList" />
     <student-form @submitted="addList" />
     <br />
