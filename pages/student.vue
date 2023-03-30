@@ -1,6 +1,7 @@
 <template>
   <div>
-    {{ title }}
+    {{ title }} <br />
+    <br />
     <student-list :classList="classList" />
     <student-form @submitted="addList" />
     <br />
@@ -16,20 +17,21 @@ export default {
   data() {
     return {
       classList: [
-        { name: "sam", number: 1 },
-        { name: "annie", number: 2 },
-        { name: "terin", number: 3 },
-        { name: "alex", number: 4 },
+        { name: "sam", number: 1, mark: 82 },
+        { name: "annie", number: 2, mark: 87 },
+        { name: "terin", number: 3, mark: 75 },
+        { name: "alex", number: 4, mark: 95 },
       ],
       title: "STUDENT FORM",
     };
   },
 
   methods: {
-    addList(name, number) {
+    addList(name, number, mark) {
       this.classList.push({
         name: name,
         number: number,
+        mark: mark,
       });
     },
   },
